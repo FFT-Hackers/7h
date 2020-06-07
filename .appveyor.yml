@@ -74,8 +74,7 @@ deploy:
     tag: ${appveyor_repo_tag_name}
     release: ${_RELEASE_NAME}
     artifact: ${_RELEASE_NAME}_debug,${_RELEASE_NAME}
-    auth_token:
-      secure: SXUyBqg8+wl9fn3xHV2Br0xDH65EyPAnFwJbwcg94wIesv9osQEefC3zxu9iDTUh
+    auth_token: ${_GH_DEPLOYMENT_TOKEN}
     on:
       _IS_BUILD_CANARY: false
   - provider: GitHub
@@ -84,8 +83,7 @@ deploy:
     artifact: ${_RELEASE_NAME}_debug,${_RELEASE_NAME}
     prerelease: true
     force_update: true
-    auth_token:
-      secure: SXUyBqg8+wl9fn3xHV2Br0xDH65EyPAnFwJbwcg94wIesv9osQEefC3zxu9iDTUh
+    auth_token: ${_GH_DEPLOYMENT_TOKEN}
     on:
       _IS_BUILD_CANARY: true
     description: |
